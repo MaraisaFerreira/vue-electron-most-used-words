@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import { ipcRenderer } from 'electron';
 import Card from './Card';
 
 export default {
@@ -32,17 +33,17 @@ export default {
 	data() {
 		return {
 			files: [],
-			groupedWords: [
-				{ name: 'i', amount: 1000 },
-				{ name: 'you', amount: 900 },
-				{ name: 'he', amount: 850 },
-			],
+			groupedWords: [],
 		};
 	},
 
 	methods: {
 		processSubtitles() {
-			console.log(this.files);
+			const paths = this.files.map((file) => file.path);
+			ipcRenderer.send('process-subtitles', paths);
+			ipcRenderer.on('process-subtitles', (event, resp) => {
+				this.groupedWords = resp;
+			});
 		},
 	},
 };
