@@ -1,24 +1,9 @@
-# most-used-words
+<div align='center'>
+<img src='./public/logo.png'>
+<hr>
 
-## Project setup
-```
-npm install
-```
+<p>Projeto criado usando VueJS e Electron que processa o conteúdo de legendas .str e retorna as palavras e a quantidade de vezes que cada uma foi usada. </p>
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+<img src='./public/screenshot.jpg'>
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+</div>
